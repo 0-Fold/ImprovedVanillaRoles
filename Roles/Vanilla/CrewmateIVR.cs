@@ -1,7 +1,7 @@
 
-namespace TOHE.Roles.Vanilla;
+namespace IVR.Roles.Vanilla;
 
-internal class CrewmateTOHE : RoleBase
+internal class CrewmateIVR : RoleBase
 {
     //===========================SETUP================================\\
     private const int Id = 6000;
