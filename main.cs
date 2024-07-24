@@ -141,7 +141,6 @@ public class Main : BasePlugin
     public static ConfigEntry<bool> ForceOwnLanguage { get; private set; }
     public static ConfigEntry<bool> ForceOwnLanguageRoleName { get; private set; }
     public static ConfigEntry<bool> SwitchVanilla { get; private set; }
-    public static ConfigEntry<bool> GodMode { get; private set; }
     public static ConfigEntry<bool> DarkTheme { get; private set; }
     public static ConfigEntry<bool> ShowPlayerInfoInLobby { get; private set; }
     public static ConfigEntry<bool> LobbyMusic { get; private set; }
@@ -221,7 +220,6 @@ public class Main : BasePlugin
         ForceOwnLanguage = Config.Bind("Client Options", "ForceOwnLanguage", false);
         ForceOwnLanguageRoleName = Config.Bind("Client Options", "ForceOwnLanguageRoleName", false);
         SwitchVanilla = Config.Bind("Client Options", "SwitchVanilla", false);
-        GodMode = Config.Bind("Client Options", "GodMode", false);
         DarkTheme = Config.Bind("Client Options", "DarkTheme", true);
         ShowPlayerInfoInLobby = Config.Bind("Client Options", "ShowPlayerInfoInLobby", false);
         LobbyMusic = Config.Bind("Client Options", "LobbyMusic", false);
@@ -265,11 +263,6 @@ public class Main : BasePlugin
         Preset3 = Config.Bind("Preset Name Options", "Preset3", "Preset_3");
         Preset4 = Config.Bind("Preset Name Options", "Preset4", "Preset_4");
         Preset5 = Config.Bind("Preset Name Options", "Preset5", "Preset_5");
-        Preset6 = Config.Bind("Preset Name Options", "Preset6", "Preset_6");
-        Preset7 = Config.Bind("Preset Name Options", "Preset7", "Preset_7");
-        Preset8 = Config.Bind("Preset Name Options", "Preset8", "Preset_8");
-        Preset9 = Config.Bind("Preset Name Options", "Preset9", "Preset_9");
-        Preset10 = Config.Bind("Preset Name Options", "Preset10", "Preset_10");
         WebhookUrl = Config.Bind("Other", "WebhookURL", "none");
         BetaBuildUrl = Config.Bind("Other", "BetaBuildURL", string.Empty);
         MessageWait = Config.Bind("Other", "MessageWait", 0);
@@ -460,7 +453,6 @@ public enum SuffixModes
     DoNotKillMe,
     NoAndroidPlz,
     AutoHost
-    Sigma Rizzla!
 }
 
 public enum VoteMode
