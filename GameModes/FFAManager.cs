@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using EHR.Modules;
+using IVR.Modules;
 using HarmonyLib;
 using Hazel;
 using UnityEngine;
-using static EHR.Translator;
+using static IVR.Translator;
 
-namespace EHR;
+namespace IVR;
 
 internal static class FFAManager
 {
