@@ -16,6 +16,7 @@ internal class ScientistIVR : RoleBase
 
     private static OptionItem BatteryCooldown;
     private static OptionItem BatteryDuration;
+    private static OptionItem BatteryTask;
 
     public override void SetupCustomOption()
     {
