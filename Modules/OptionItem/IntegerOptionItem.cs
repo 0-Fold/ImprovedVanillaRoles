@@ -1,4 +1,4 @@
-namespace EHR;
+namespace IVR;
 
 public class IntegerOptionItem(int id, string name, IntegerValueRule rule, int defaultValue, TabGroup tab, bool isSingleValue = false) : OptionItem(id, name, rule.GetNearestIndex(defaultValue), tab, isSingleValue)
 {
