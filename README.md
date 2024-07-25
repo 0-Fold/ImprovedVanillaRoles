@@ -2,7 +2,7 @@
 
 <br>
 
-<img align="left" alt="Cover" src="Resources/Images/IVR-icon" width="50%" height="250" />
+<img align="left" alt="Cover" src="Resources/Images/IVR-icon.png" width="50%" height="250" />
 
 <p align="right">
 
