@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace EHR;
+namespace IVR;
 
 public class FloatOptionItem(int id, string name, FloatValueRule rule, float defaultValue, TabGroup tab, bool isSingleValue = false) : OptionItem(id, name, rule.GetNearestIndex(defaultValue), tab, isSingleValue)
 {
