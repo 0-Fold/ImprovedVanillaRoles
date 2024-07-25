@@ -1,6 +1,6 @@
 using AmongUs.GameOptions;
 
-namespace TOHE;
+namespace IVR;
 
 public static class AURoleOptions
 {
