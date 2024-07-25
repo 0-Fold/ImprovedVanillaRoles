@@ -2,10 +2,10 @@ using Hazel;
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using TOHE.Roles.Impostor;
-using static TOHE.Translator;
+using IVR.Roles.Impostor;
+using static IVR.Translator;
 
-namespace TOHE.Modules.ChatManager
+namespace IVR.Modules.ChatManager
 {
     public class ChatManager
     {
