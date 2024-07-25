@@ -1,21 +1,25 @@
+using System.Collections.Generic;
 using Hazel;
 
 namespace IVR;
 
 public static class CustomWinnerHolder
 {
-    // 勝者のチームが格納されます。
-    // リザルトの背景色の決定などに使用されます。
-    // 注: この変数を変更する時、WinnerRoles・WinnerIdsを同時に変更しないと予期せぬ勝者が現れる可能性があります。
+    // The winning team will be stored.
+    // Used to determine background color of results, etc.
+    // Note: When changing this variable, if you do not change WinnerRoles and WinnerIds at the same time, unexpected winners may appear.
     public static CustomWinner WinnerTeam;
-    // 追加勝利するプレイヤーのチームが格納されます。
-    // リザルトの表示に使用されます。
+
+    // Stores the team of additional winning players.
+    // Used to display results.
     public static HashSet<AdditionalWinners> AdditionalWinnerTeams;
-    // 勝者の役職が格納され、この変数に格納されている役職のプレイヤーは全員勝利となります。
-    // チームとなるニュートラルの処理に最適です。
+
+    // The winning role is stored, and all players whose roles are stored in this variable win.
+    // Ideal for handling team neutrals.
     public static HashSet<CustomRoles> WinnerRoles;
-    // 勝者のPlayerIDが格納され、このIDを持つプレイヤーは全員勝利します。
-    // 単独勝利するニュートラルの処理に最適です。
+
+    // Stores the winner's PlayerID, all players with this ID win.
+    // Ideal for handling neutrals that win alone.
     public static HashSet<byte> WinnerIds;
 
     public static void Reset()
@@ -25,58 +29,33 @@ public static class CustomWinnerHolder
         WinnerRoles = [];
         WinnerIds = [];
     }
+
     public static void ClearWinners()
     {
         WinnerRoles.Clear();
         WinnerIds.Clear();
     }
-    /// <summary><para>WinnerTeamに値を代入します。</para><para>すでに代入されている場合、AdditionalWinnerTeamsに追加します。</para></summary>
+
+    /// <summary><para>Assign a value to WinnerTeam. </para><para>Add to AdditionalWinnerTeams if already assigned.</para></summary>
     public static void SetWinnerOrAdditonalWinner(CustomWinner winner)
     {
         if (WinnerTeam == CustomWinner.Default) WinnerTeam = winner;
         else AdditionalWinnerTeams.Add((AdditionalWinners)winner);
     }
-    /// <summary><para>WinnerTeamに値を代入します。</para><para>すでに代入されている場合、既存の値をAdditionalWinnerTeamsに追加してから代入します。</para></summary>
+
+    /// <summary><para>Assign a value to WinnerTeam. </para><para>If it is already assigned, add the existing value to AdditionalWinnerTeams and then assign it.</para></summary>
     public static void ShiftWinnerAndSetWinner(CustomWinner winner)
     {
         if (WinnerTeam != CustomWinner.Default)
             AdditionalWinnerTeams.Add((AdditionalWinners)WinnerTeam);
         WinnerTeam = winner;
     }
-    /// <summary><para>既存の値をすべて削除してから、WinnerTeamに値を代入します。</para></summary>
+
+    /// <summary><para>Delete any existing values and then assign the values to WinnerTeam.</para></summary>
     public static void ResetAndSetWinner(CustomWinner winner)
     {
         Reset();
         WinnerTeam = winner;
-    }
-    public static bool CheckForConvertedWinner(byte playerId)
-    {
-        foreach (var role in Utils.GetPlayerById(playerId).GetCustomSubRoles().ToArray())
-        {
-            if (!(role == CustomRoles.Madmate || role == CustomRoles.Admired || role.IsConverted())) continue;
-            switch (role)
-            {
-                case CustomRoles.Admired:
-                    ResetAndSetWinner(CustomWinner.Crewmate);
-                    return true;
-                case CustomRoles.Madmate:
-                    ResetAndSetWinner(CustomWinner.Impostor); 
-                    return true;
-                case CustomRoles.Recruit:
-                    ResetAndSetWinner(CustomWinner.Jackal); 
-                    return true;
-                case CustomRoles.Charmed:
-                    ResetAndSetWinner(CustomWinner.Cultist); 
-                    return true;
-                case CustomRoles.Infectious:
-                    ResetAndSetWinner(CustomWinner.Infectious); 
-                    return true;
-                case CustomRoles.Contagious:
-                    ResetAndSetWinner(CustomWinner.Virus); 
-                    return true;
-            }
-        }
-        return false;
     }
 
     public static MessageWriter WriteTo(MessageWriter writer)
@@ -97,6 +76,7 @@ public static class CustomWinnerHolder
 
         return writer;
     }
+
     public static void ReadFrom(MessageReader reader)
     {
         WinnerTeam = (CustomWinner)reader.ReadPackedInt32();
