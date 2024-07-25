@@ -3,7 +3,7 @@ using InnerNet;
 using System;
 using UnityEngine;
 
-namespace TOHE.Modules.DelayNetworkDataSpawn;
+namespace IVR.Modules.DelayNetworkDataSpawn;
 
 [HarmonyPatch(typeof(InnerNetClient))]
 public class InnerNetClientPatch
