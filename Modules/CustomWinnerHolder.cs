@@ -1,6 +1,6 @@
 using Hazel;
 
-namespace TOHE;
+namespace IVR;
 
 public static class CustomWinnerHolder
 {
