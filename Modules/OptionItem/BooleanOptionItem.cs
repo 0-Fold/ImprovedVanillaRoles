@@ -1,4 +1,4 @@
-namespace EHR;
+namespace IVR;
 
 public class BooleanOptionItem(int id, string name, bool defaultValue, TabGroup tab, bool isSingleValue = false) : OptionItem(id, name, defaultValue ? 1 : 0, tab, isSingleValue)
 {
