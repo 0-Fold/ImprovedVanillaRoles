@@ -1,6 +1,6 @@
 using System;
 
-namespace EHR.Modules;
+namespace IVR.Modules;
 
 public interface ILogHandler
 {
