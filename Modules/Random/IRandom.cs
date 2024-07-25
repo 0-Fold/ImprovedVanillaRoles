@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace EHR;
+namespace IVR;
 
 public interface IRandom
 {
