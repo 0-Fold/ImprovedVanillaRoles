@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AmongUs.GameOptions;
 
-namespace EHR;
+namespace IVR;
 
 public class OptionBackupData
 {
