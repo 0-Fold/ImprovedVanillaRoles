@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace EHR;
+namespace IVR;
 
 public class StringOptionItem(int id, string name, IList<string> selections, int defaultValue, TabGroup tab, bool isSingleValue = false, bool noTranslation = false) : OptionItem(id, name, defaultValue, tab, isSingleValue)
 {
@@ -25,7 +25,7 @@ public class StringOptionItem(int id, string name, IList<string> selections, int
             // For 0% or 100%
             case 2:
                 return CurrentValue * 100;
-            // EHR’s career generation mode
+            // ’s career generation mode
             case 3:
                 return CurrentValue;
             // For 0% to 100% or 5% to 100%
