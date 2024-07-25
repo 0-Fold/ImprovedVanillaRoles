@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using AmongUs.Data;
-using EHR.Impostor;
-using EHR.Neutral;
+using IVR.Impostor;
 
-namespace EHR;
+namespace IVR;
 
 static class PlayerOutfitExtension
 {
