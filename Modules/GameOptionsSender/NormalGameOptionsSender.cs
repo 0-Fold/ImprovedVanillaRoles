@@ -1,7 +1,7 @@
 using System;
 using AmongUs.GameOptions;
 
-namespace EHR.Modules;
+namespace IVR.Modules;
 
 public sealed class NormalGameOptionsSender : GameOptionsSender
 {
