@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TOHE;
+namespace IVR;
 
 public static class DebugModeManager
 {
