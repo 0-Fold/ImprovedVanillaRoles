@@ -1,7 +1,7 @@
 using System;
 using AmongUs.GameOptions;
 
-namespace EHR;
+namespace IVR;
 
 public abstract class OptionBackupValue
 {
