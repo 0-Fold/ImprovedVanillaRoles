@@ -1,6 +1,6 @@
 using System;
 
-namespace EHR;
+namespace IVR;
 
 public class NetRandomWrapper(Random instance) : IRandom
 {
